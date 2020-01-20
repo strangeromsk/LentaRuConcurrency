@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15b86512-8d89-490b-ac42-5cc5885df153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CustomRecursiveAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkCrawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CustomRecursiveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CustomRecursiveAction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,12 +93,20 @@
       <option name="project" value="LOCAL" />
       <updated>1577376207757</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added ForkJoinPool implementation and Recursive task class">
+      <created>1579540842057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579540842057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="added ForkJoinPool implementation and Recursive task class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ForkJoinPool implementation and Recursive task class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579538399831">
@@ -125,34 +129,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="450" y="149" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1578665585865" />
-    <state x="425" y="9" key="CommitChangelistDialog2" timestamp="1577376206152">
+    <state x="425" y="9" key="CommitChangelistDialog2" timestamp="1579540840778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1577376206152" />
-    <state x="550" y="168" key="FileChooserDialogImpl" timestamp="1579198245290">
+    <state x="425" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579540840778" />
+    <state x="550" y="168" key="FileChooserDialogImpl" timestamp="1579541243137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="550" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579198245290" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1579540123507">
+    <state x="550" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579541243137" />
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1579540858516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579540123507" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1579540123506">
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579540858516" />
+    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1579540858515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579540123506" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1579540123506">
+    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579540858515" />
+    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1579540858515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579540123506" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1579540123507">
+    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579540858515" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1579540858515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579540123507" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579540858515" />
     <state width="1493" height="262" key="GridCell.Tab.1.bottom" timestamp="1578941469233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -173,10 +177,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576166403242" />
-    <state x="362" y="136" key="Vcs.Push.Dialog.v2" timestamp="1577376214143">
+    <state x="362" y="136" key="Vcs.Push.Dialog.v2" timestamp="1579540845254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="362" y="136" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1577376214143" />
+    <state x="362" y="136" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579540845254" />
     <state x="426" y="188" key="run.anything.popup" timestamp="1579535116102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

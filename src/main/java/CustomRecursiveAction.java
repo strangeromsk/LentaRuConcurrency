@@ -6,6 +6,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.RecursiveAction;
@@ -13,8 +14,8 @@ import java.util.concurrent.RecursiveAction;
 public class CustomRecursiveAction extends RecursiveAction
 {
 
-    Set<String> urls = ConcurrentHashMap.newKeySet();
-    String html = "https://lenta.ru";
+    private Set<String> urls = ConcurrentHashMap.newKeySet();
+    private static final Random random = new Random();
 
     private long workLoad = 0;
 
@@ -26,11 +27,11 @@ public class CustomRecursiveAction extends RecursiveAction
     protected void compute() {
         if(this.workLoad > 4) {
             System.out.println("Splitting workLoad : " + this.workLoad);
+            String html = "https://lenta.ru";
             getLinks(html, urls);
-            List<CustomRecursiveAction> subtasks =
-                    new ArrayList<>();
 
-            subtasks.addAll(createSubtasks());
+            List<CustomRecursiveAction> subtasks =
+                    new ArrayList<>(createSubtasks());
 
             for(RecursiveAction subtask : subtasks){
                 subtask.fork();
@@ -65,10 +66,11 @@ public class CustomRecursiveAction extends RecursiveAction
                 Elements elements = doc.select("a");
                 //System.out.println(url);
                 for (Element element : elements) {
+                    Thread.sleep(random.nextInt(300));
                     System.out.println(element.absUrl("href"));
                     getLinks(element.absUrl("href"), urls);
                 }
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
         }
