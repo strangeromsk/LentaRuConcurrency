@@ -1,8 +1,9 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,10 @@ import java.util.concurrent.RecursiveAction;
 public class CustomRecursiveAction extends RecursiveAction
 {
 
-    private Set<String> urls = ConcurrentHashMap.newKeySet();
+    private static Set<String> uniqueURL = ConcurrentHashMap.newKeySet();
+    public static String mySite;
     private static final Random random = new Random();
-
+    private static BufferedWriter bufferedWriter;
     private long workLoad = 0;
 
     public CustomRecursiveAction(long workLoad) {
@@ -25,20 +27,42 @@ public class CustomRecursiveAction extends RecursiveAction
 
     @Override
     protected void compute() {
-        if(this.workLoad > 4) {
-            System.out.println("Splitting workLoad : " + this.workLoad);
-            String html = "https://lenta.ru";
-            getLinks(html, urls);
+        List<CustomRecursiveAction> subtasks =
+                new ArrayList<>(createSubtasks());
 
-            List<CustomRecursiveAction> subtasks =
-                    new ArrayList<>(createSubtasks());
+        for(RecursiveAction subtask : subtasks){
+            subtask.fork();
+        }
+        mySite = "https://lenta.ru";
+        getLinks("https://lenta.ru");
 
-            for(RecursiveAction subtask : subtasks){
-                subtask.fork();
+    }
+
+    private static void getLinks(String url){
+        try {
+            Document doc = Jsoup.connect(url).userAgent("Mozilla").get();
+            Elements links = doc.select("a");
+
+            if (links.isEmpty()) {
+                return;
             }
 
-        } else {
-            System.out.println("Doing workLoad myself: " + this.workLoad);
+            links.stream().map((link) -> link.attr("abs:href")).forEachOrdered((thisUrl) -> {
+                boolean add = uniqueURL.add(thisUrl);
+                if (add && thisUrl.contains(mySite)) {
+                    try {
+                        Thread.sleep(random.nextInt(300));
+                        getWriter().write("\n" + thisUrl);
+                        getWriter().flush();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                    System.out.println(thisUrl);
+                    getLinks(thisUrl);
+                }
+            });
+        } catch (IOException ex) {
+            //ex.printStackTrace();
         }
     }
 
@@ -54,25 +78,18 @@ public class CustomRecursiveAction extends RecursiveAction
         return subtasks;
     }
 
-    static void getLinks(String url, Set<String> urls) {
-        if (urls.contains(url)) {
-            return;
-        }
-        if (url.contains("https://www.lenta.ru") || url.contains("https://lenta.ru")) {
-            urls.add(url);
-
-            try {
-                Document doc = Jsoup.connect(url).get();
-                Elements elements = doc.select("a");
-                //System.out.println(url);
-                for (Element element : elements) {
-                    Thread.sleep(random.nextInt(300));
-                    System.out.println(element.absUrl("href"));
-                    getLinks(element.absUrl("href"), urls);
-                }
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
+    private static synchronized BufferedWriter getWriter()
+    {
+        try{
+            if(bufferedWriter == null )
+            {
+                bufferedWriter =  new BufferedWriter(new FileWriter("src/main/resources/links.txt", true));
             }
+            return bufferedWriter;
+        }
+        catch(Exception e)
+        {
+            throw new RuntimeException(e);
         }
     }
 }
