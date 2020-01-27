@@ -43,8 +43,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Transactions2" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -53,6 +53,7 @@
     <configuration name="LinkCrawler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LinkCrawler" />
       <module name="LentaRu" />
+      <option name="VM_PARAMETERS" value="-Xmx8800m" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,19 +108,65 @@
       <option name="project" value="LOCAL" />
       <updated>1579541609122</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="reimplemented CustomRecursiveAction and added concurrent writing to a file">
+      <created>1580057762427</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580057762427</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added ForkJoinPool implementation and Recursive task class" />
     <MESSAGE value="added Thread.sleep up to 300 ms and some minor improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Thread.sleep up to 300 ms and some minor improvements" />
+    <MESSAGE value="reimplemented CustomRecursiveAction and added concurrent writing to a file" />
+    <option name="LAST_COMMIT_MESSAGE" value="reimplemented CustomRecursiveAction and added concurrent writing to a file" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579538399831">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1500" y="-1780" key="#Project_Structure" timestamp="1580143182283">
+      <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
+    <state x="1500" y="-1780" key="#Project_Structure/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580143182283" />
+    <state x="377" y="-2041" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580140645696">
+      <screen x="2" y="-2160" width="2560" height="1440" />
+    </state>
+    <state x="377" y="-2041" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580140645696" />
     <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1579538399831" />
     <state x="960" y="-1943" key="#com.intellij.ide.util.MemberChooser" timestamp="1580050695669">
       <screen x="2" y="-2160" width="2560" height="1440" />
@@ -138,37 +185,39 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="450" y="149" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1578665585865" />
-    <state x="425" y="9" key="CommitChangelistDialog2" timestamp="1579541608079">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="710" y="-2144" key="CommitChangelistDialog2" timestamp="1580057760783">
+      <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
+    <state x="710" y="-2144" key="CommitChangelistDialog2/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580057760783" />
     <state x="425" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579541608079" />
-    <state x="550" y="168" key="FileChooserDialogImpl" timestamp="1579541243137">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="919" y="-1866" key="FileChooserDialogImpl" timestamp="1580060737226">
+      <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
+    <state x="919" y="-1866" key="FileChooserDialogImpl/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580060737226" />
     <state x="550" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579541243137" />
-    <state width="1264" height="413" key="GridCell.Tab.0.bottom" timestamp="1580056167280">
+    <state width="1264" height="411" key="GridCell.Tab.0.bottom" timestamp="1580143225052">
       <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1264" height="413" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580056167280" />
+    <state width="1264" height="411" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580143225052" />
     <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579547293064" />
-    <state width="1264" height="413" key="GridCell.Tab.0.center" timestamp="1580056167280">
+    <state width="1264" height="411" key="GridCell.Tab.0.center" timestamp="1580143225051">
       <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1264" height="413" key="GridCell.Tab.0.center/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580056167280" />
+    <state width="1264" height="411" key="GridCell.Tab.0.center/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580143225051" />
     <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579547293064" />
-    <state width="1264" height="413" key="GridCell.Tab.0.left" timestamp="1580056167280">
+    <state width="1264" height="411" key="GridCell.Tab.0.left" timestamp="1580143225051">
       <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1264" height="413" key="GridCell.Tab.0.left/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580056167280" />
+    <state width="1264" height="411" key="GridCell.Tab.0.left/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580143225051" />
     <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579547293064" />
-    <state width="1264" height="413" key="GridCell.Tab.0.right" timestamp="1580056167280">
+    <state width="1264" height="411" key="GridCell.Tab.0.right" timestamp="1580143225052">
       <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824/-1920.568.1920.1080@0.0.1536.824" timestamp="1577126990448" />
-    <state width="1264" height="413" key="GridCell.Tab.0.right/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580056167280" />
+    <state width="1264" height="411" key="GridCell.Tab.0.right/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580143225052" />
     <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579547293064" />
     <state width="1493" height="262" key="GridCell.Tab.1.bottom" timestamp="1578941469233">
       <screen x="0" y="0" width="1536" height="824" />
@@ -190,9 +239,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576166403242" />
-    <state x="362" y="136" key="Vcs.Push.Dialog.v2" timestamp="1579541611043">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="605" y="-1922" key="Vcs.Push.Dialog.v2" timestamp="1580057764401">
+      <screen x="2" y="-2160" width="2560" height="1440" />
     </state>
+    <state x="605" y="-1922" key="Vcs.Push.Dialog.v2/0.0.1536.824/2.-2160.2560.1440@2.-2160.2560.1440" timestamp="1580057764401" />
     <state x="362" y="136" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579541611043" />
     <state x="426" y="188" key="run.anything.popup" timestamp="1579535116102">
       <screen x="0" y="0" width="1536" height="824" />

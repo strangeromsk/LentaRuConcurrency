@@ -5,20 +5,18 @@ import org.jsoup.select.Elements;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.RecursiveAction;
 
 public class CustomRecursiveAction extends RecursiveAction
 {
 
-    private static Set<String> uniqueURL = ConcurrentHashMap.newKeySet();
-    public static String mySite;
+    private static Set<String> uniqueURL = Collections.synchronizedSet(new HashSet<>());;
+    private static String mySite;
     private static final Random random = new Random();
     private static BufferedWriter bufferedWriter;
+    private static String tabulation = "\t";
     private long workLoad = 0;
 
     public CustomRecursiveAction(long workLoad) {
@@ -34,7 +32,7 @@ public class CustomRecursiveAction extends RecursiveAction
             subtask.fork();
         }
         mySite = "https://lenta.ru";
-        getLinks("https://lenta.ru");
+        getLinks(mySite);
 
     }
 
@@ -52,7 +50,13 @@ public class CustomRecursiveAction extends RecursiveAction
                 if (add && thisUrl.contains(mySite)) {
                     try {
                         Thread.sleep(random.nextInt(300));
-                        getWriter().write("\n" + thisUrl);
+                        long count = thisUrl.chars().filter(ch->ch == '/').count();
+                        if (count <= 3){
+                            getWriter().write("\n" + thisUrl);
+                        }
+                        else {
+                            getWriter().write("\n"+ tabulation.repeat((int) count) + thisUrl);
+                        }
                         getWriter().flush();
                     } catch (Exception ex) {
                         ex.printStackTrace();
